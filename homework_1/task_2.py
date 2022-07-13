@@ -1,4 +1,4 @@
-def int32_to_ip(int32):
+def int32_to_ip(int32) -> str:
     """
         Функция для получения IPv4 адреса
 

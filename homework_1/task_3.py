@@ -1,17 +1,3 @@
-def calc_fact(number) -> int:
-    """
-        Функция для вычисления факториала
-
-    :param number:
-    :return:
-    """
-    mult_result = 1
-    for i in range(1, number + 1):
-        mult_result *= i
-
-    return mult_result
-
-
 def zeros(number) -> int:
     """
         Функция для вычисления количества нулей в конце числа
@@ -19,10 +5,11 @@ def zeros(number) -> int:
     :param number:
     :return:
     """
-    fact_number = str(calc_fact(number))
-    how_many_zeros = len(fact_number) - len(fact_number.rstrip('0'))
-
-    return how_many_zeros
+    result = 0
+    while number > 4:
+        result += number // 5
+        number //= 5
+    return result
 
 
 def main():

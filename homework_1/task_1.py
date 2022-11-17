@@ -18,7 +18,6 @@ def main():
         "http://google.co.jp",
         "www.xakep.ru",
         "https://youtube.com",
-
         "http://hgoogle.com"
     ]
 

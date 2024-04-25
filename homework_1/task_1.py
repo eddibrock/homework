@@ -1,11 +1,17 @@
-def domain_name(url) -> str:
+def domain_name(url, substr) -> str:
     """
         Функция для получения доменного имени из url адреса
 
     :param url:
+    :param substr:
     :return:
     """
-    domain = url.lstrip('htpsw:/.').split('.')[0]
+    substrw = substr + 'www.'
+    if substrw in url:
+        domain = url.replace(substrw, '').split('.')[0]
+    else:
+        domain = url.replace(substr, '').split('.')[0]
+
     return domain
 
 
@@ -18,11 +24,15 @@ def main():
         "http://google.co.jp",
         "www.xakep.ru",
         "https://youtube.com",
-        "http://hgoogle.com"
+        "https://youtubewww.com",
+        "http://hgoogle.com",
     ]
 
     for url in urls:
-        print(domain_name(url))
+        if 'https://' in url:
+            print(domain_name(url, 'https://'))
+        elif 'http://' in url:
+            print(domain_name(url, 'http://'))
 
 
 main()

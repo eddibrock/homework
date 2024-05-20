@@ -17,20 +17,21 @@ def replace_symbols(idx_list, word, with_symbol) -> str:
     return ''.join(word)
 
 
-def banana(search_word, word) -> set:
+def banana(word) -> set:
     """
         Функция для получения множества одинаковых слов из переданного набора букв
 
-    :param search_word:
     :param word:
     :return:
     """
     result = set()
-
+    search_word = 'banana'
     if len(word) == len(search_word):
         if word == search_word:
             result.add(word)
-        return result
+            return result
+        else:
+            return word
 
     limit = 1000  # Остановить цикл на N итерации
     count = 0
@@ -49,8 +50,6 @@ def banana(search_word, word) -> set:
 
 
 def main():
-    search_word = 'banana'
-
     words = [
         'banann',
         'banana',
@@ -60,7 +59,7 @@ def main():
     ]
 
     for word in words:
-        print(banana(search_word, word))
+        print(banana(word))
 
 
 main()

@@ -12,7 +12,7 @@ def get_multiply(primes) -> int:
     return mult_result
 
 
-def count_find_num(primes, limit) -> list:
+def count_find_num(primes) -> list:
     """
         Функция для получения произведений множителей primes, которые меньше limit.
 
@@ -20,6 +20,7 @@ def count_find_num(primes, limit) -> list:
     :param limit:
     :return:
     """
+    limit = 500
     result = set()
     multiply = get_multiply(primes)  # В начале перемножить числа входного списка
     for number in primes:
@@ -34,13 +35,13 @@ def count_find_num(primes, limit) -> list:
 
 
 def main():
-    limit = 500
+
     primes = [
         [2, 5, 7]
     ]
 
     for numbers in primes:
-        print(count_find_num(numbers, limit))
+        print(count_find_num(numbers))
 
 
 main()
